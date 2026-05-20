@@ -1,0 +1,262 @@
+/* -- Algemene instellingen -- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --background: #17171b;
+    --button-trailer: #306676;
+    --button-ar: #61d3e5;
+    --grey: #a6a6a9;
+    --text: #fff;
+    --radius: 12px;
+    --button-text: 
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+html, body {
+  background: var(--background);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.button {
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  font-size: 13px;
+  color: var(--text);
+  cursor: pointer;
+  border: none;
+  padding: 15px;
+}
+ 
+/* -- Header -- */
+.logo-bar {
+  position: relative;
+  text-align: center;
+  padding: 18px 16px 12px;
+}
+
+/* Terugknop in header op homepage verbergen */
+.page-home .back-button {
+  display: none;
+}
+
+/* -- Homepagina -- */ 
+/* Tijdperken titels */
+.section-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+  padding: 4px 16px 10px;
+}
+ 
+/* Horizontale scrolling op de rijen */
+.poster-row {
+  display: flex;
+  gap: 10px;
+  padding: 0 16px 20px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Lelijke scrollbar in Firefox verbergen */
+}
+
+/* Lelijke scrollbar in  Chrome/Safari/Edge verbergen */
+.poster-row::-webkit-scrollbar {
+  display: none;
+}
+ 
+/* Filmposters */
+.poster-card {
+  flex-shrink: 0;
+  width: 160px;
+  height: 240px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+/* Klik-effect filmposter */
+.poster-card:active {
+  transform: scale(0.96);
+}
+
+.poster-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.poster-meta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent 0%, rgba(0,0,0,0.75) 100%);
+  padding: 20px 8px 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  color: var(--text);
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+ 
+.kijkwijzer-badge {
+  background: rgba(80,80,80,0.9);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text);
+  flex-shrink: 0;
+}
+ 
+/* -- Detailpagina film -- */
+.back-button {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 30px;
+  margin-top: 3px;
+  background-color: black;
+  border-radius: var(--radius);
+}
+ 
+.detail-top {
+  display: flex;
+  gap: 14px;
+  padding: 0 16px 20px;
+  align-items: flex-start;
+}
+ 
+.poster-wrap {
+  flex-shrink: 0;
+  width: 120px;
+  height: 180px;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.poster-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+ 
+/* Breedtevullend */
+.detail-info {
+  flex: 1; padding-top: 2px;
+}
+ 
+.film-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+ 
+.meta-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+ 
+.imdb-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 14px;
+}
+
+.imdb-row img {
+  width: 36px;
+  height: auto;
+}
+
+.imdb-score {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
+ 
+.trailer-button {
+  background: var(--button-trailer);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px; /* Ruimte tussen icoon en tekst */
+}
+ 
+.desc-title {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 16px 8px;
+}
+
+.desc-body {
+  font-size: 13px;
+  color: var(--grey);
+  line-height: 1.65;
+  padding: 0 16px 20px;
+}
+ 
+.facts-title {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 16px 12px;
+}
+
+.fact-item {
+  display: flex;
+  gap: 12px;
+  padding: 0 16px 14px;
+  align-items: flex-start;
+}
+
+.fact-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.fact-text {
+  font-size: 13px;
+  color: var(--grey);
+  line-height: 1.6;
+}
+ 
+.cta-wrap {
+  padding: 8px 16px 24px;
+}
+
+.cta-button {
+  display: block;
+  width: 100%;
+  background: var(--button-ar);
+  text-align: center;
+}
