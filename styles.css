@@ -83,6 +83,7 @@ html, body {
   position: relative;
   cursor: pointer;
   transition: transform 0.15s ease;
+  text-decoration: none;
 }
 
 /* Klik-effect filmposter */
