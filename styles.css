@@ -8,7 +8,6 @@
     --grey: #a6a6a9;
     --text: #fff;
     --radius: 12px;
-    --button-text: 
 }
 
 *, *::before, *::after {
@@ -143,6 +142,7 @@ html, body {
   margin-top: 3px;
   background-color: black;
   border-radius: var(--radius);
+  border: none;
 }
  
 .detail-top {
