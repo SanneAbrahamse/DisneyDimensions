@@ -262,25 +262,11 @@ html, body {
   padding: 0 0px 8px; /* top, right & left, bottom */
 }
 
-@media (min-width: 1024px) {
-  .desc-title {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
 .desc-body {
   font-size: 13px;
   color: var(--grey);
   line-height: 1.65;
   padding: 0 0px 20px; /* top, right & left, bottom */
-}
-
-@media (min-width: 1024px) {
-  .desc-body {
-    padding-left: 0;
-    padding-right: 0;
-  }
 }
  
 .facts-title {
@@ -289,25 +275,11 @@ html, body {
   padding: 0 0px 12px; /* top, right & left, bottom */
 }
 
-@media (min-width: 1024px) {
-  .facts-title {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
 .fact-item {
   display: flex;
   gap: 12px;
   padding: 0 0px 14px; /* top, right & left, bottom */
   align-items: flex-start;
-}
-
-@media (min-width: 1024px) {
-  .fact-item {
-    padding-left: 0;
-    padding-right: 0;
-  }
 }
 
 .fact-icon {
@@ -323,14 +295,7 @@ html, body {
 }
  
 .cta-wrap {
-  padding: 8px 16px 24px;
-}
-
-@media (min-width: 1024px) {
-  .cta-wrap {
-    padding-left: 0;
-    padding-right: 0;
-  }
+  padding: 8px 0px 24px; /* top, right & left, bottom */
 }
 
 .cta-button {
