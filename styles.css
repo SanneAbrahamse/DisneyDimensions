@@ -172,20 +172,21 @@ html, body {
 /* Tweekoloms wrapper op desktop */
 .detail-wrapper {
   display: flex;
-  gap: 24px;
+  flex-direction: row; /* poster links, info rechts */
+  gap: 16px;
   padding: 0 16px 24px;
   align-items: flex-start;
 }
 
-@media (max-width: 600px) {
+@media (min-width: 1024px) {
   .detail-wrapper {
-    flex-direction: column;
+    gap: 24px;
   }
 }
  
 .poster-wrap {
   flex-shrink: 0;
-  width: 200px;
+  width: 120px;
   height: auto;
   border-radius: var(--radius);
   overflow: hidden;
@@ -208,30 +209,28 @@ html, body {
   flex: 1;
   padding-top: 2px;
   display: flex;
-  flex-direction: row; /* op mobiel naast elkaar */
-  flex-wrap: wrap; /* zorgt ervoor dat elementen naar de volgende regel gaan als het scherm te smal is */
-  align-items: center;
-  gap: 12px;
+  flex-direction: column; /* film titel, imdb en trailer button onder elkaar */
+  align-items: flex-start;
+  gap: 8px;
 }
 
 @media (min-width: 1024px) {
   .detail-info {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
+    gap: 8px;
   }
 }
  
 .film-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 1.2;
-  margin-bottom: 8px;
+  margin-bottom: 0px;
 }
  
 @media (min-width: 1024px) {
   .film-title {
     font-size: 28px;
+    margin-bottom: 10px;
   }
 }
  
@@ -241,14 +240,26 @@ html, body {
   gap: 6px;
   font-size: 11px;
   color: var(--text);
-  margin-bottom: 10px;
+  margin-bottom: 0px;
+}
+
+@media (min-width: 1024px) {
+  .meta-row {
+    margin-bottom: 10px;
+  }
 }
  
 .imdb-row {
   display: flex;
   align-items: center;
   gap: 7px;
-  margin-bottom: 14px;
+  margin-bottom: 0px;
+}
+
+@media (min-width: 1024px) {
+  .imdb-row {
+    margin-bottom: 10px;
+  }
 }
 
 .imdb-row img {
@@ -267,32 +278,33 @@ html, body {
   display: inline-flex;
   align-items: center;
   gap: 7px; /* Ruimte tussen icoon en tekst */
-  margin-bottom: 24px; /* Ruimte tussen button en desc-title */
+  margin-bottom: 20px; /* Ruimte tussen button en desc-title */
+  align-self: flex-start; /* niet breedtevullend */
 }
  
 .desc-title {
   font-size: 16px;
   font-weight: 600;
-  padding: 0 0px 8px; /* top, right & left, bottom */
+  padding: 0px 0px 8px; /* top, right & left, bottom */
 }
 
 .desc-body {
   font-size: 13px;
   color: var(--grey);
   line-height: 1.65;
-  padding: 0 0px 20px; /* top, right & left, bottom */
+  padding: 0px 0px 20px; /* top, right & left, bottom */
 }
  
 .facts-title {
   font-size: 16px;
   font-weight: 600;
-  padding: 0 0px 12px; /* top, right & left, bottom */
+  padding: 0px 0px 12px; /* top, right & left, bottom */
 }
 
 .fact-item {
   display: flex;
   gap: 12px;
-  padding: 0 0px 14px; /* top, right & left, bottom */
+  padding: 0px 0px 14px; /* top, right & left, bottom */
   align-items: flex-start;
 }
 
