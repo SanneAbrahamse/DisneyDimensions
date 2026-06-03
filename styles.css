@@ -169,33 +169,20 @@ html, body {
   border: none;
 }
 
-/* Tweekoloms wrapper op desktop */
+/* Mobiel: 2-koloms grid, poster links, info rechts, rest eronder */
 .detail-wrapper {
-  display: flex;
-  flex-direction: row; /* poster links, info rechts */
-  gap: 16px;
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 4px 16px; /* 4px tussen rijen, 32px tussen kolommen */
   padding: 0 16px 24px;
-  align-items: flex-start;
+  align-items: start;
 }
 
-@media (min-width: 1024px) {
-  .detail-wrapper {
-    gap: 24px;
-  }
-}
- 
 .poster-wrap {
-  flex-shrink: 0;
-  width: 120px;
-  height: auto;
+  grid-column: 1;
+  grid-row: 1;
   border-radius: var(--radius);
   overflow: hidden;
-}
-
-@media (min-width: 1024px) {
-  .poster-wrap {
-    width: 320px;
-  }
 }
 
 .poster-wrap img {
@@ -203,63 +190,73 @@ html, body {
   height: auto;
   display: block;
 }
- 
-/* Breedtevullend */
+
 .detail-info {
-  flex: 1;
-  padding-top: 2px;
+  grid-column: 2;
+  grid-row: 1;
   display: flex;
-  flex-direction: column; /* film titel, imdb en trailer button onder elkaar */
-  align-items: flex-start;
-  gap: 8px;
+  flex-direction: column;
+  gap: 12px;
 }
 
+/* Mobiel: beschrijving/facts/cta volle breedte onder poster */
+.desc-title,
+.desc-body,
+.facts-title,
+.fact-item,
+.cta-wrap {
+  grid-column: 1 / -1;
+}
+
+/* Desktop: alles in rechterkolom naast poster */
 @media (min-width: 1024px) {
+  .detail-wrapper {
+    grid-template-columns: 320px 1fr;
+  }
+
+  .poster-wrap {
+    grid-column: 1;
+    grid-row: 1 / span 8; /* poster blijft links over alle rijen */
+  }
+
   .detail-info {
-    gap: 8px;
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .desc-title,
+  .desc-body,
+  .facts-title,
+  .fact-item,
+  .cta-wrap {
+    grid-column: 2;
   }
 }
- 
+
 .film-title {
   font-size: 18px;
   font-weight: 600;
   line-height: 1.2;
-  margin-bottom: 0px;
 }
- 
+
 @media (min-width: 1024px) {
   .film-title {
     font-size: 28px;
-    margin-bottom: 10px;
   }
 }
- 
+
 .meta-row {
   display: flex;
   align-items: center;
   gap: 6px;
   font-size: 11px;
   color: var(--text);
-  margin-bottom: 0px;
 }
 
-@media (min-width: 1024px) {
-  .meta-row {
-    margin-bottom: 10px;
-  }
-}
- 
 .imdb-row {
   display: flex;
   align-items: center;
   gap: 7px;
-  margin-bottom: 0px;
-}
-
-@media (min-width: 1024px) {
-  .imdb-row {
-    margin-bottom: 10px;
-  }
 }
 
 .imdb-row img {
@@ -272,39 +269,39 @@ html, body {
   font-weight: 500;
   color: var(--text);
 }
- 
+
 .trailer-button {
   background: var(--button-trailer);
   display: inline-flex;
   align-items: center;
-  gap: 7px; /* Ruimte tussen icoon en tekst */
-  margin-bottom: 20px; /* Ruimte tussen button en desc-title */
-  align-self: flex-start; /* niet breedtevullend */
+  gap: 7px;
+  margin-bottom: 12px;
+  align-self: flex-start;
 }
- 
+
 .desc-title {
   font-size: 16px;
   font-weight: 600;
-  padding: 0px 0px 8px; /* top, right & left, bottom */
+  padding: 0 0 8px;
 }
 
 .desc-body {
   font-size: 13px;
   color: var(--grey);
   line-height: 1.65;
-  padding: 0px 0px 20px; /* top, right & left, bottom */
+  padding: 0 0 20px;
 }
- 
+
 .facts-title {
   font-size: 16px;
   font-weight: 600;
-  padding: 0px 0px 12px; /* top, right & left, bottom */
+  padding: 0 0 12px;
 }
 
 .fact-item {
   display: flex;
   gap: 12px;
-  padding: 0px 0px 14px; /* top, right & left, bottom */
+  padding: 0 0 14px;
   align-items: flex-start;
 }
 
@@ -319,9 +316,9 @@ html, body {
   color: var(--grey);
   line-height: 1.6;
 }
- 
+
 .cta-wrap {
-  padding: 8px 0px 24px; /* top, right & left, bottom */
+  padding: 8px 0 24px;
 }
 
 .cta-button {
